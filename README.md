@@ -14,14 +14,15 @@
 > UDP Scan <br/>
 > nmap -sU --top-ports 25 -p- 192.168.1.0/24 <br/>
 
-## WP SCAN <br/>
+## WordPress <br/>
+> <b>WP SCAN</b><br/>
 > wpscan --url http://192.168.0.1 <br/>
 > wpscan --url http://192.168.0.1 -e u    #User Enum <br/>
 > wpscan --url http://192.168.0.1 --enumerate u <br/>
 > wpscan --url http://192.168.0.1 --usernames /home/user.txt --passwords /home/pass.txt  <br/>
 > wpscan --url http://192.168.0.1 -u john --passwords /home/pass.txt  <br/>
 
-## METASPLOIT <br/>
+> <b>METASPLOIT</b> <br/>
 > msfconsole : <br/>
 > use auxilliary/scanner/http/wordpress_login_enum <br/>
 > show options <br/>
