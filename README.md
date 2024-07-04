@@ -16,4 +16,7 @@
 
 ## WP SCAN <br/>
 > wpscan --url http://192.168.0.1 <br/>
+> wpscan --url http://192.168.0.1 -e u    #User Enum <br/>
+> wpscan --url http://192.168.0.1 --usernames /home/user.txt --passwords /home/pass.txt  <br/>
 > 
+ 
