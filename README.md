@@ -37,4 +37,5 @@
 > hydra -L /home/user.txt -P /home/pass.txt ftp://192.168.0.1 <br/>
 > hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ssh <br/>
 > hydra -L /home/user.txt -P /home/pass.txt ssh://192.168.0.1 <br/>
- 
+
+
