@@ -13,7 +13,7 @@
 > <br/>
 > UDP Scan <br/>
 > nmap -sU --top-ports 25 -p- 192.168.1.0/24 <br/>
-<br/>
+
 ## WP SCAN <br/>
 > wpscan --url http://192.168.0.1 <br/>
 > 
