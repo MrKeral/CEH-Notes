@@ -86,3 +86,9 @@
 > Encrypt/Decrypt > Symmetric(modern) > RC4<br/>
 > Enter bit length (EX:14)<br/>
 > Click on Decrypt<br/>
+>
+> **DES(ECB):**<br/>
+> Open File<br/>
+> Encrypt/Decrypt > Symmetric(modern) > DES(ECB)<br/>
+> Select bit length if given in qus<br/>
+> Click on Decrypt<br/>
