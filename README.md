@@ -44,10 +44,15 @@
 > <b>Extract:</b>SNOW -C -p "hack" abcd.txt<br/>
 
 > <b>OpenStego (Windows)</b><br/>
-> Click on Extract Data
-> Select Stego file
-> Select output folder
-> Enter password & CLick on Extract Data Button
+> Click on Extract Data<br/>
+> Select Stego file<br/>
+> Select output folder<br/>
+> Enter password & CLick on Extract Data Button<br/>
 
 > <b>StegHide (Linux)</b><br/>
-> 
+> <b>Hide: </b>steghide embed -cf cover.png -ef secret.txt -p 1234 <br/>stegcrack
+> <b>Extract:</b> steghide extract -sf steg.file<br/>
+> Enter Password & Hit Enter<br/>
+
+> <b>Stegcracker (Linux)</b><br/>
+> stegcracker steg.file <br/>
