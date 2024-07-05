@@ -56,3 +56,22 @@
 
 > <b>Stegcracker (Linux)</b><br/>
 > stegcracker steg.file <br/>
+
+## CRYPTOGRAPHY <br/>
+> <b>HashCalc (Windows)</b><br/>
+> Open File<br/>
+> Click on Calculate Button<br/>
+
+> <b>VeraCrypt (Windows)</b><br/>
+> Select any Volume A,B,D,E<br/>
+> Select Encrypted Folder<br/>
+> Click on mount button<br/>
+> Enter Password<br/>
+> Open File Manager<br/>
+> Open Newly created drive and open secret.txt file<br/>
+
+> <b>Crack Hash</b><br/>
+> [Hash Analyzer](https://www.tunnelsup.com/hash-analyzer/)<br/>
+> [Hashes](https://hashes.com/en/decrypt/hash)<br/>
+> [CrackStation](https://crackstation.net/)<br/>
+> 
