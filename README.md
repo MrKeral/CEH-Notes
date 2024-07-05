@@ -92,3 +92,6 @@
 > Encrypt/Decrypt > Symmetric(modern) > DES(ECB)<br/>
 > Select bit length if given in qus<br/>
 > Click on Decrypt<br/>
+
+## SQL Injection <br/>
+> 
