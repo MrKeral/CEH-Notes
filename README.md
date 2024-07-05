@@ -74,4 +74,15 @@
 > [Hash Analyzer](https://www.tunnelsup.com/hash-analyzer/)<br/>
 > [Hashes](https://hashes.com/en/decrypt/hash)<br/>
 > [CrackStation](https://crackstation.net/)<br/>
-> 
+
+> <b>BCTextEncoder (Windows)</b><br/>
+> Paste Hash Value<br/>
+> Click on Decode<br/>
+> Enter Password<br/>
+
+> <b>Cryptool (Windows)</b><br/>
+> **RC4:**<br/>
+> Open File<br/>
+> Encrypt/Decrypt > Symmetric(modern) > RC4<br/>
+> Enter bit length (EX:14)<br/>
+> Click on Decrypt<br/>
