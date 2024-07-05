@@ -38,4 +38,16 @@
 > hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ssh <br/>
 > hydra -L /home/user.txt -P /home/pass.txt ssh://192.168.0.1 <br/>
 
+## STEGANOGRAPHY <br/>
+> <b>SNOW (Windows)</b><br/>
+> <b>Hide:</b>SNOW -C -m "Hey Hacker" -p "hack" abc.txt abcd.txt<br/>
+> <b>Extract:</b>SNOW -C -p "hack" abcd.txt<br/>
 
+> <b>OpenStego (Windows)</b><br/>
+> Click on Extract Data
+> Select Stego file
+> Select output folder
+> Enter password & CLick on Extract Data Button
+
+> <b>StegHide (Linux)</b><br/>
+> 
