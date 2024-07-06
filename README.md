@@ -3,6 +3,7 @@
 > sudo netdiscover -r 192.168.1.0/24				
 ## NMAP
 > Best <br/>
+> nmap -sn 192.168.1.0/24 <br/>
 > nmap -A -T4 -p- 192.168.1.0/24 <br/>
 > nmap -sC -sV -Pn -T4 -vv -p- 192.168.1.0/24 <br/>
 > nmap --script vuln -Pn -T4 -p- 192.168.1.0/24 <br/>
