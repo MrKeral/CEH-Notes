@@ -93,5 +93,8 @@
 > Select bit length if given in qus<br/>
 > Click on Decrypt<br/>
 
-## SQL Injection <br/>
-> 
+## WireShark <br/>
+> For credentials: http.request.method == POST<br/>
+> For DoS Attack:<br/>
+>                 Statistics > IPv4 Statistics > Source and Destination Address<br/>
+>                 Apply Filter:- tcp.flags.syn == 1 and tcp.flags.ack == 0<br/>
