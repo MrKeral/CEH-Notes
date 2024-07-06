@@ -98,3 +98,33 @@
 > For DoS Attack:<br/>
 >                 Statistics > IPv4 Statistics > Source and Destination Address<br/>
 >                 Apply Filter:- tcp.flags.syn == 1 and tcp.flags.ack == 0<br/>
+
+## Android <br/>
+> **Normal** <br/>
+> nmap -p -sV -p 5555 <br/>
+> adb connect 192.168.0.1:5555 <br/>
+> adb shell <br/>
+> cd sdcard <br/>
+> cat secret.txt <br/>
+>  <br/>
+>  **ELF**<br/>
+> cd sdcard/scan <br/>
+> sudo adb pull /sdcard/scan/ <br/>
+> ent evil.elf <br/>
+> sha384sum evil.elf <br/>
+
+## FQDN  <br/>
+> nmap -p 389 -sV -iL ip.list <br/>
+> nmap -p389 -sV 192.168.0.1 <br/>
+> FQDN: DC.pentester.team <br/>
+
+## WIFI  <br/>
+> aircrack-ng cap.file
+> aircrak-ng -w wordlist.txt cap.file
+> aircrak-ng -b 2a:25:zd:54:48:as-w wordlist.txt cap.file
+
+## Privilege Escalation
+> Login in ssh
+> sudo -l
+> sudo -i
+
