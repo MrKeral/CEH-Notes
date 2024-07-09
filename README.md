@@ -137,12 +137,12 @@
 
 ## Malware<br/>
 > **ProRat**<br/>
-> Enter Victim IP
-> Click on connect
-> Enter Password
-> Click on Search Files "Searching for *.txt"
-> Click on File Manager
-> Move to Secret Directory & Download the secret file
+> Enter Victim IP<br/>
+> Click on connect<br/>
+> Enter Password<br/>
+> Click on Search Files "Searching for *.txt"<br/>
+> Click on File Manager<br/>
+> Move to Secret Directory & Download the secret file<br/>
 
 
 
