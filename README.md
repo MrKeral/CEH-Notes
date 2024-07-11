@@ -1,6 +1,25 @@
 # CEH-Notes
 
-> sudo netdiscover -r 192.168.1.0/24				
+> sudo netdiscover -r 192.168.1.0/24
+
+## Resource Sharing
+> **Wget:**<br/>
+> Single file: wget http://192.168.0.101:8000/filename -O C:\path\to\destination\filename<br/>
+> All files: Navigate to PasteFolder > wget -r -np -nd -A "*" http://192.168.0.101:8000/folder/<br/>
+> <br/>
+> **SCP:**<br/>
+> Start ssh service.<br/>
+> Linux: service ssh start<br/>
+> Windows: Settings>Apps>Optional Features>Add Feature>Install OpenSSH Server | Powershell:Start-Service sshd<br/>
+> File: scp /path/to/local/file username@192.168.0.104:/path/to/destination<br/>
+> Folder: scp -r /path/to/local/folder username@192.168.0.104:/path/to/destination/folder<br/>
+><br/>
+> **Python HTTP Server**<br/>
+> cd OpenSharingFolder<br/>
+> python3 -m http.server 8000<br/>
+> Open VM, navigate to http://192.168.0.101:8000<br/>
+
+
 ## NMAP
 > Best <br/>
 > nmap -sn 192.168.1.0/24 <br/>
@@ -144,5 +163,6 @@
 > Click on File Manager<br/>
 > Move to Secret Directory & Download the secret file<br/>
 
-
+> **ELF with  DIE**<br/>
+> 
 
