@@ -33,6 +33,8 @@
 > <br/>
 > UDP Scan <br/>
 > nmap -sU --top-ports 25 -p- 192.168.1.0/24 <br/>
+> <br/>
+> nmap --script smb-os-discovery.nse IP <br/>
 
 ## SQLMap <br/>
 > sqlmap -r req.txt -dbs<br/>
@@ -45,7 +47,7 @@
 > wpscan --url http://192.168.0.1 <br/>
 > wpscan --url http://192.168.0.1 -e u    #User Enum <br/>
 > wpscan --url http://192.168.0.1 --enumerate u <br/>
-> wpscan --url http://192.168.0.1 --usernames /home/user.txt --passwords /home/pass.txt  <br/>
+> wpscan --url http://192.168.0.1 --usernames /home/user.txt --passwords(-P) /home/pass.txt  <br/>
 > wpscan --url http://192.168.0.1 -u john --passwords /home/pass.txt  <br/>
 
 > <b>METASPLOIT</b> <br/>
@@ -63,6 +65,7 @@
 > hydra -L /home/user.txt -P /home/pass.txt ftp://192.168.0.1 <br/>
 > hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ssh <br/>
 > hydra -L /home/user.txt -P /home/pass.txt ssh://192.168.0.1 <br/>
+> hydra -L usernames.txt -P passwords.txt -s 25 -vV 192.168.0.104 smtp<br/>
 
 ## STEGANOGRAPHY <br/>
 > <b>SNOW (Windows)</b><br/>
@@ -153,6 +156,15 @@
 > Login in ssh<br/>
 > sudo -l<br/>
 > sudo -i<br/>
+> <br/>
+> **id_rsa**<br/>
+> su user<br/>
+> cd .ssh<br/>
+> ls<br/>
+> cat id_rsa & Copy it<br/>
+> Paste on host Machine<br/>
+> chmod 600 id_rsa<br/>
+> ssh root@192.168.0.1 -i id_rsa -p 22 <br/>
 
 ## Malware<br/>
 > **ProRat**<br/>
@@ -162,7 +174,8 @@
 > Click on Search Files "Searching for *.txt"<br/>
 > Click on File Manager<br/>
 > Move to Secret Directory & Download the secret file<br/>
-
-> **ELF with  DIE**<br/>
-> 
-
+> <br/>
+> **Static Analysis ELF with  DIE**<br/>
+> Open Die<br/>
+> Upload File<br/>
+> Click on File Info<br/>
