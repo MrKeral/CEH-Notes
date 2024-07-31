@@ -156,7 +156,8 @@
 ## WIFI  <br/>
 > aircrack-ng cap.file<br/>
 > aircrak-ng -w wordlist.txt cap.file<br/>
-> aircrak-ng -b 2a:25:zd:54:48:as-w wordlist.txt cap.file<br/>
+> aircrak-ng -b 2a:25:zd:54:48:as -w wordlist.txt cap.file<br/>
+> aircrak-ng -a2 -b 2a:25:zd:54:48:as -w wordlist.txt cap.file<br/>
 
 ## Privilege Escalation<br/>
 > Login in ssh<br/>
