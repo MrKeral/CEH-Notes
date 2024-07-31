@@ -180,7 +180,7 @@
 > Click on Search Files "Searching for *.txt"<br/>
 > Click on File Manager<br/>
 > Move to Secret Directory & Download the secret file<br/>
-> <br/>
+> 
 > **Static Analysis ELF with  DIE**<br/>
 > Open Die<br/>
 > Upload File<br/>
