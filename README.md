@@ -131,7 +131,7 @@
 
 ## Android <br/>
 > **Normal** <br/>
-> nmap -p -sV -p 5555 <br/>
+> nmap ip -sV -p 5555 <br/>
 > adb connect 192.168.0.1:5555 <br/>
 > adb shell <br/>
 > cd sdcard <br/>
