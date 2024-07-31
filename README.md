@@ -146,7 +146,7 @@
 ## EOL <br/>
 > nmap -Pn --script vuln 192.168.0.1<br/>
 > Copy the CVE and Paste it on Google<br/>
-> Check the severity | Ans (10)<br/>
+> Check the severity | For Ex: 10<br/>
 
 ## FQDN  <br/>
 > nmap -p 389 -sV -iL ip.list <br/>
